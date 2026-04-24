@@ -117,7 +117,7 @@ $$
 \min_x \|Ax - b\|^2 + \lambda \|x\|^2
 $$
 
-- \( \lambda > 0 \): regularization parameter  
+- $$\lambda > 0 $$: regularization parameter  
 - Encourages smaller, more stable solutions  
 - Trades off accuracy for stability  
 
@@ -135,30 +135,63 @@ Regularization:
 
 ## Connection to Machine Learning
 
-Ill-posedness appears frequently in ML:
+At a fundamental level, many machine learning problems are **inherently ill-posed**.
 
-- Overparameterized models  
-- Noisy datasets  
-- Inverse learning tasks  
+### Why?
+
+In supervised learning, we try to learn a function \( f \) from a **finite dataset**:
+
+$$
+\{(x_i, y_i)\}_{i=1}^n
+$$
+
+However:
+
+- There are **infinitely many functions** that can fit the data  
+- The true data-generating function is **unknown**  
+- Observations may be **noisy or incomplete**  
+
+This leads to:
+
+- **Non-uniqueness** → multiple valid solutions  
+- **Instability** → small data changes can alter the learned model  
+
+---
+
+### Key Insight
+
+The raw learning problem is **ill-posed**, but ML makes it **well-posed in practice** by introducing constraints.
 
 ---
 
-### Common ML Techniques
+### How ML Fixes Ill-Posedness
 
-- L2 regularization (weight decay)  
-- Ridge regression  
-- Dropout (implicit stabilization)  
+Machine learning models impose structure to reduce ambiguity:
+
+- **Model assumptions**  
+  (e.g., linear models, neural network architectures)
+
+- **Regularization**  
+  (e.g., L2 regularization, weight decay)
+
+- **Inductive bias**  
+  (e.g., smoothness, sparsity, simplicity)
+
+- **Data augmentation / priors**  
+  (inject additional information)
 
 ---
 
-## Key Takeaways
+### Common Techniques
 
-- **Well-posed problems** are stable, unique, and reliable  
-- **Ill-posed problems** lack stability, uniqueness, or existence  
-- Many real-world ML problems are **naturally ill-posed**  
-- **Regularization** is essential to make them solvable  
+- Ridge regression (explicit regularization)  
+- Weight decay in neural networks  
+- Early stopping (implicit regularization)  
+- Dropout (stochastic stabilization)  
 
 ---
+
+
 
 ## Summary Table
 
