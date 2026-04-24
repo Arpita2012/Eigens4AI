@@ -206,10 +206,10 @@ Machine learning models impose structure to reduce ambiguity:
 ## References
 
 - Tikhonov, A.N. — *Regularization of Ill-Posed Problems*  
-  https://link.springer.com/book/10.1007/978-94-009-2240-9  
+ 
 
 - Hadamard, J. — *Lectures on Cauchy’s Problem in Linear Partial Differential Equations*  
-  https://archive.org/details/lecturesoncauchy00hada  
+  
 
 - Source article (summary reference)  
   https://periodica.org/index.php/journal/article/download/927/778/906
