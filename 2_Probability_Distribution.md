@@ -108,6 +108,61 @@ Marginalization means:
 
 ---
 
+### Example: Marginal Distribution (Three Coin Tosses)
+
+To understand marginal distributions, consider three fair coin tosses.
+
+Define:
+- $X$: number of Heads in the first two tosses ($0,1,2$)
+- $Y$: number of Heads in the third toss ($0$ or $1$)
+
+There are 8 equally likely outcomes:
+HHH, HHT, HTH, HTT, THH, THT, TTH, TTT (each with probability $1/8$)
+
+---
+
+### Joint Distribution Table
+
+| $X \backslash Y$ | $Y=0$ (Tails) | $Y=1$ (Heads) | Marginal $P_X$ |
+|-----------------|--------------|--------------|----------------|
+| $X=0$ (TT) | $1/8$ (TTT) | $1/8$ (TTH) | $2/8 = 1/4$ |
+| $X=1$ (HT, TH) | $2/8$ (HTT, THT) | $2/8$ (HTH, THH) | $4/8 = 1/2$ |
+| $X=2$ (HH) | $1/8$ (HHT) | $1/8$ (HHH) | $2/8 = 1/4$ |
+| **Marginal $P_Y$** | $4/8 = 1/2$ | $4/8 = 1/2$ | **1** |
+
+---
+
+### How to Read the Marginals
+
+**Marginal Distribution of $X$ (row sums):**
+
+To compute $P(X=1)$, ignore the third toss and sum across the row:
+$$
+P(X=1) = \frac{2}{8} + \frac{2}{8} = \frac{4}{8} = \frac{1}{2}
+$$
+
+---
+
+**Marginal Distribution of $Y$ (column sums):**
+
+To compute $P(Y=1)$, ignore the first two tosses and sum down the column:
+$$
+P(Y=1) = \frac{1}{8} + \frac{2}{8} + \frac{1}{8} = \frac{4}{8} = \frac{1}{2}
+$$
+
+---
+
+### Key Insight
+
+Marginalization means:
+
+> Ignoring one variable by summing over all its possible values.
+
+- Rows → marginal over $X$
+- Columns → marginal over $Y$
+
+
+
 ## 4. Conditional Distribution
 
 The **conditional distribution** describes the distribution of one variable given another.
