@@ -132,24 +132,20 @@ HHH, HHT, HTH, HTT, THH, THT, TTH, TTT (each with probability $1/8$)
 
 ---
 
+
 ### How to Read the Marginals
 
 **Marginal Distribution of $X$ (row sums):**
 
-To compute $P(X=1)$, ignore the third toss and sum across the row:
-$$
-P(X=1) = \frac{2}{8} + \frac{2}{8} = \frac{4}{8} = \frac{1}{2}
-$$
+To compute $P(X=1)$, ignore the third toss and sum across the row:  
+$P(X=1) = 2/8 + 2/8 = 4/8 = 1/2$
 
 ---
 
 **Marginal Distribution of $Y$ (column sums):**
 
-To compute $P(Y=1)$, ignore the first two tosses and sum down the column:
-$$
-P(Y=1) = \frac{1}{8} + \frac{2}{8} + \frac{1}{8} = \frac{4}{8} = \frac{1}{2}
-$$
-
+To compute $P(Y=1)$, ignore the first two tosses and sum down the column:  
+$P(Y=1) = 1/8 + 2/8 + 1/8 = 4/8 = 1/2$
 ---
 
 ### Key Insight
