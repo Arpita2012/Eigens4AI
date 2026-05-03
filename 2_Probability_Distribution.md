@@ -146,6 +146,7 @@ $P(X=1) = 2/8 + 2/8 = 4/8 = 1/2$
 
 To compute $P(Y=1)$, ignore the first two tosses and sum down the column:  
 $P(Y=1) = 1/8 + 2/8 + 1/8 = 4/8 = 1/2$
+
 ---
 
 ### Key Insight
