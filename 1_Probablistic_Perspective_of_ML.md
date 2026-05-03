@@ -212,6 +212,127 @@ This ensures that probabilities like:
 
 are all mathematically well-defined.
 
+
+## 6. From Probability Space to Data Distribution
+
+We now connect the abstract probability space to the distribution of observed data.
+
+---
+
+### 6.1 Starting Point
+
+Let:
+
+- $(\Omega, \mathcal{F}, P)$ be a probability space  
+- $(\mathbb{R}, \mathcal{B}(\mathbb{R}))$ be a measurable space  
+- $X: \Omega \rightarrow \mathbb{R}$ be a measurable function (random variable)
+
+---
+
+### 6.2 Mapping Between Spaces
+
+The random variable $X$ induces a mapping:
+
+$$
+(\Omega, \mathcal{F}, P) \xrightarrow{X} (\mathbb{R}, \mathcal{B}(\mathbb{R}), P_X)
+$$
+
+where:
+- $\Omega$ → underlying randomness  
+- $\mathbb{R}$ → observed values  
+- $P_X$ → probability distribution of $X$  
+
+---
+
+### 6.3 Definition of the Induced Distribution
+
+The distribution of $X$, denoted $P_X$, is defined as:
+
+$$
+P_X(B) = P\big(X^{-1}(B)\big), \quad \forall B \in \mathcal{B}(\mathbb{R})
+$$
+
+This is called the pushforward measure of $P$ through $X$.
+
+---
+
+### 6.4 Interpretation
+
+To compute the probability of an event in the observed space:
+
+1. Take a set $B \subseteq \mathbb{R}$
+2. Find all outcomes in $\Omega$ that map into $B$:
+   $$
+   X^{-1}(B) = \{\omega \in \Omega \mid X(\omega) \in B\}
+   $$
+3. Measure its probability using $P$
+
+So:
+
+$$
+\text{Probability in output space} = \text{Probability of corresponding inputs}
+$$
+
+---
+
+### 6.5 Properties of $P_X$
+
+The induced distribution $P_X$ is a valid probability measure on $(\mathbb{R}, \mathcal{B}(\mathbb{R}))$, meaning:
+
+- Non-negativity:
+  $$
+  P_X(B) \geq 0
+  $$
+
+- Normalization:
+  $$
+  P_X(\mathbb{R}) = 1
+  $$
+
+- Countable additivity:
+  $$
+  P_X\left(\bigcup_i B_i\right) = \sum_i P_X(B_i)
+  \quad \text{for disjoint } B_i
+  $$
+
+---
+
+### 6.6 Notation
+
+It is common to write:
+
+$$
+P(X \in B) := P_X(B)
+$$
+
+This emphasizes that probabilities are now expressed in terms of the random variable $X$.
+
+---
+
+### 6.7 Key Insight
+
+The probability distribution of a random variable is not defined directly on $\mathbb{R}$.
+
+It is induced from the underlying probability space via the mapping $X$:
+
+$$
+P_X = X_{\#} P
+$$
+
+---
+
+### 6.8 Connection to Machine Learning
+
+In machine learning:
+
+- Data points $x$ are samples from $P_X$
+- The true distribution $P_X$ is unknown
+- Learning algorithms aim to approximate properties of $P_X$
+
+Thus:
+
+> Observed data distribution = pushforward of underlying randomness through the data-generating process
+
 ## Notation summary
 
 - $\Omega$: source of randomness (data-generating process)
