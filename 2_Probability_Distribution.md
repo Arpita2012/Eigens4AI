@@ -80,14 +80,10 @@ The **marginal distribution** is the distribution of a subset of variables obtai
 From $P_{XY}$, we can recover:
 
 - Distribution of $X$:
-  $$
-  P_X(B) = P_{XY}(B \times \mathbb{R})
-  $$
+  $P_X(B) = P_{XY}(B \times \mathbb{R})$
 
 - Distribution of $Y$:
-  $$
-  P_Y(B) = P_{XY}(\mathbb{R} \times B)
-  $$
+  $P_Y(B) = P_{XY}(\mathbb{R} \times B)$
 
 ---
 
