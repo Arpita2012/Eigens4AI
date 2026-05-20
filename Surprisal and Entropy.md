@@ -13,16 +13,18 @@ It quantifies the amount of **information gained** when an event occurs.
 
 # Formula for Surprisal
 
-The surprisal of an event \(x\) is defined as:
+The surprisal of an event $x$ is defined as:
 
-$ S(x) = -\log_b(P(x)) 
+$$
+S(x)=-\log_b(P(x))
+$$
 
 Where:
 
-- \(P(x)\) is the probability of event \(x\)
-- \(b\) is the logarithm base
+- $P(x)$ is the probability of event $x$
+- $b$ is the logarithm base
   - Base 2 → units are **bits**
-  - Base \(e\) → units are **nats**
+  - Base $e$ → units are **nats**
 
 ---
 
@@ -45,15 +47,15 @@ Examples:
 
 If an event is guaranteed:
 
-\[
-P(x) = 1
-\]
+$$
+P(x)=1
+$$
 
 then:
 
-\[
-S(x) = -\log_2(1) = 0
-\]
+$$
+S(x)=-\log_2(1)=0
+$$
 
 A completely expected event carries **zero information**.
 
@@ -63,15 +65,15 @@ A completely expected event carries **zero information**.
 
 If:
 
-\[
-P(x) = 0
-\]
+$$
+P(x)=0
+$$
 
 then:
 
-\[
-S(x) \rightarrow \infty
-\]
+$$
+S(x)\rightarrow\infty
+$$
 
 An impossible event would produce infinite surprisal.
 
@@ -81,15 +83,15 @@ An impossible event would produce infinite surprisal.
 
 For a fair coin:
 
-\[
-P(x) = 0.5
-\]
+$$
+P(x)=0.5
+$$
 
 then:
 
-\[
-S(x) = -\log_2(0.5) = 1 \text{ bit}
-\]
+$$
+S(x)=-\log_2(0.5)=1\text{ bit}
+$$
 
 A fair coin toss therefore contains **1 bit of information**.
 
@@ -103,14 +105,14 @@ It represents the overall uncertainty of a random variable.
 
 The entropy formula is:
 
-\[
-H(X) = -\sum_x P(x)\log_b(P(x))
-\]
+$$
+H(X)=-\sum_x P(x)\log_b(P(x))
+$$
 
 Where:
 
-- \(H(X)\) is the entropy of random variable \(X\)
-- \(P(x)\) is the probability of outcome \(x\)
+- $H(X)$ is the entropy of random variable $X$
+- $P(x)$ is the probability of outcome $x$
 
 ---
 
@@ -122,15 +124,15 @@ Entropy describes the **expected average information** across all events.
 
 Mathematically:
 
-\[
-H(X) = \mathbb{E}[S(X)]
-\]
+$$
+H(X)=\mathbb{E}[S(X)]
+$$
 
 This means:
 
-\[
-\text{Entropy} = \text{Average Surprisal}
-\]
+$$
+\text{Entropy}=\text{Average Surprisal}
+$$
 
 ---
 
@@ -145,9 +147,9 @@ This means:
 
 Entropy:
 
-\[
-H(X) = 1 \text{ bit}
-\]
+$$
+H(X)=1\text{ bit}
+$$
 
 The uncertainty is maximal.
 
@@ -157,8 +159,8 @@ The uncertainty is maximal.
 
 Suppose:
 
-- \(P(\text{Heads}) = 0.99\)
-- \(P(\text{Tails}) = 0.01\)
+- $P(\text{Heads})=0.99$
+- $P(\text{Tails})=0.01$
 
 Then:
 
