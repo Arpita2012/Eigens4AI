@@ -50,7 +50,7 @@ Both laws concern the behaviour of $\bar{X}_n$ as $n \to \infty$.
 
 For any $\varepsilon > 0$:
 
-$$\lim_{n \to \infty} P\!\left(\left|\bar{X}_n - \mu\right| > \varepsilon\right) = 0$$
+$$\lim_{n \to \infty} P\left(\left|\bar{X}_n - \mu\right| > \varepsilon\right) = 0$$
 
 This is called **convergence in probability**: $\bar{X}_n \xrightarrow{p} \mu$.
 
@@ -123,11 +123,11 @@ Chebyshev (used in the WLLN proof below) is Markov applied one level up — the 
 
 For any random variable $Z$ with mean $\mu_Z$ and variance $\sigma_Z^2$, and any $\varepsilon > 0$:
 
-$$P\!\left(|Z - \mu_Z| \geq \varepsilon\right) \leq \frac{\sigma_Z^2}{\varepsilon^2}$$
+$$P\left(|Z - \mu_Z| \geq \varepsilon\right) \leq \frac{\sigma_Z^2}{\varepsilon^2}$$
 
 *Proof of Chebyshev:* By Markov's inequality applied to $(Z - \mu_Z)^2$:
 
-$$P\!\left(|Z - \mu_Z| \geq \varepsilon\right) = P\!\left((Z-\mu_Z)^2 \geq \varepsilon^2\right) \leq \frac{\mathbb{E}[(Z-\mu_Z)^2]}{\varepsilon^2} = \frac{\sigma_Z^2}{\varepsilon^2} \qquad \square$$
+$$P\left(|Z - \mu_Z| \geq \varepsilon\right) = P\left((Z-\mu_Z)^2 \geq \varepsilon^2\right) \leq \frac{\mathbb{E}[(Z-\mu_Z)^2]}{\varepsilon^2} = \frac{\sigma_Z^2}{\varepsilon^2} \qquad \square$$
 
 ### Proof of WLLN
 
@@ -141,15 +141,15 @@ $$\mathrm{Var}(\bar{X}_n) = \frac{1}{n^2}\sum_{i=1}^n \mathrm{Var}(X_i) = \frac{
 
 **Step 2.** Apply Chebyshev's inequality to $\bar{X}_n$:
 
-$$P\!\left(|\bar{X}_n - \mu| \geq \varepsilon\right) \leq \frac{\mathrm{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2}$$
+$$P\left(|\bar{X}_n - \mu| \geq \varepsilon\right) \leq \frac{\mathrm{Var}(\bar{X}_n)}{\varepsilon^2} = \frac{\sigma^2}{n\varepsilon^2}$$
 
 **Step 3.** Take the limit:
 
-$$0 \leq P\!\left(|\bar{X}_n - \mu| \geq \varepsilon\right) \leq \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \to \infty} 0$$
+$$0 \leq P\left(|\bar{X}_n - \mu| \geq \varepsilon\right) \leq \frac{\sigma^2}{n\varepsilon^2} \xrightarrow{n \to \infty} 0$$
 
 By the squeeze theorem:
 
-$$\lim_{n\to\infty} P\!\left(|\bar{X}_n - \mu| > \varepsilon\right) = 0 \qquad \blacksquare$$
+$$\lim_{n\to\infty} P\left(|\bar{X}_n - \mu| > \varepsilon\right) = 0 \qquad \blacksquare$$
 
 **Note:** This proof requires only finite variance $\sigma^2 < \infty$. The WLLN holds under even weaker conditions (finite mean suffices — see Variants).
 
@@ -159,7 +159,7 @@ $$\lim_{n\to\infty} P\!\left(|\bar{X}_n - \mu| > \varepsilon\right) = 0 \qquad \
 
 ### Statement
 
-$$P\!\left(\lim_{n \to \infty} \bar{X}_n = \mu\right) = 1$$
+$$P\left(\lim_{n \to \infty} \bar{X}_n = \mu\right) = 1$$
 
 This is called **almost sure convergence**: $\bar{X}_n \xrightarrow{a.s.} \mu$.
 
@@ -232,7 +232,7 @@ For triangular arrays $\{X_{n,k}\}$ (where each row has $n$ variables that may d
 ### 7.7 $L^2$ LLN (Mean-Square Convergence)
 Under finite variance:
 
-$$\mathbb{E}\!\left[(\bar{X}_n - \mu)^2\right] = \frac{\sigma^2}{n} \to 0$$
+$$\mathbb{E}\left[(\bar{X}_n - \mu)^2\right] = \frac{\sigma^2}{n} \to 0$$
 
 This is **convergence in mean square** ($L^2$): $\bar{X}_n \xrightarrow{L^2} \mu$. Strictly stronger than convergence in probability, directly visible from the Chebyshev proof.
 
