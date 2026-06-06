@@ -171,7 +171,6 @@ But overall entropy is lower because the outcome is highly predictable.
 
 ---
 
-# Summary
 
 | Concept | Meaning |
 |---|---|
@@ -183,3 +182,65 @@ But overall entropy is lower because the outcome is highly predictable.
 Key idea:
 
 > Rare events are more informative than common events.
+
+# Cross Entropy
+---
+
+## Definition
+
+Let $P$ and $Q$ be probability distributions over a finite alphabet $\mathcal{X}$. The **cross entropy** of $Q$ relative to $P$ is:
+
+$$H(P, Q) = -\sum_{x \in \mathcal{X}} P(x) \log Q(x)$$
+
+**Reading:** "the expected number of bits needed to encode samples drawn from $P$, using a code optimised for $Q$."
+
+For the continuous case:
+
+$$H(P, Q) = -\int p(x) \log q(x)\, dx$$
+
+---
+
+## Decomposition
+
+Cross entropy decomposes cleanly into two terms:
+
+$$H(P, Q) = H(P) + D_{\mathrm{KL}}(P \,\|\, Q)$$
+
+| Term | Name | Meaning |
+|---|---|---|
+| $H(P)$ | Entropy of $P$ | Irreducible information content of the true distribution |
+| $D_{\mathrm{KL}}(P \| Q)$ | KL Divergence | Extra cost from using the wrong distribution $Q$ |
+
+Since $D_{\mathrm{KL}} \geq 0$, this immediately gives **Gibbs' inequality**:
+
+$$H(P, Q) \geq H(P)$$
+
+with equality iff $P = Q$.
+
+---
+
+## Cross Entropy as a Loss Function in ML
+
+In machine learning, $P$ is the **true label distribution** and $Q$ is the **model's predicted distribution**. For a single sample with true class $y$ and predicted probabilities $\hat{y}$:
+
+**Binary cross entropy** (two classes):
+
+$$\mathcal{L} = -\bigl[y \log \hat{y} + (1-y)\log(1-\hat{y})\bigr]$$
+
+**Categorical cross entropy** ($n$ classes):
+
+$$\mathcal{L} = -\sum_{i=1}^{n} y_i \log \hat{y}_i$$
+
+where $y$ is a one-hot vector. Minimising cross entropy loss is equivalent to minimising KL divergence from the true distribution, since $H(P)$ is fixed w.r.t. model parameters:
+
+$$\arg\min_\theta H(P, Q_\theta) = \arg\min_\theta D_{\mathrm{KL}}(P \,\|\, Q_\theta)$$
+
+---
+
+## Key Properties
+
+- **Not symmetric**: $H(P,Q) \neq H(Q,P)$ in general
+- **Lower bounded**: $H(P,Q) \geq H(P) \geq 0$
+- **Self cross entropy**: $H(P,P) = H(P)$ — reduces to ordinary entropy when both distributions are the same
+- **Relation to log-likelihood**: maximising log-likelihood under $P$ is equivalent to minimising $H(P, Q_\theta)$
+-  $\boxed{H(P,Q) = H(P) + D_{\mathrm{KL}}(P\|Q) \geq H(P)}$
